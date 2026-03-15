@@ -857,7 +857,7 @@ section,
 
 .portfolio .portfolio-content .portfolio-info h4 {
   font-size: 14px;
-  padding: 5px 10px;
+  padding: 10px 10px;
   font-weight: 400;
   color: #ffffff;
   display: inline-block;
@@ -879,7 +879,7 @@ section,
 .portfolio .portfolio-content .portfolio-info .preview-link,
 .portfolio .portfolio-content .portfolio-info .details-link {
   position: absolute;
-  left: calc(50% - 40px);
+  left: calc(50% - 10px);
   font-size: 26px;
   top: calc(50% - 14px);
   color: #fff;
