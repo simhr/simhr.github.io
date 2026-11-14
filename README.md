@@ -1,8 +1,6 @@
 
-# Simranjeet Singh | SAP ABAP Developer
-
 <p align="center">
-  <b>SAP ABAP Developer | ECC & S/4HANA</b>
+  <b>Simranjeet Singh | SAP ABAP Developer | ECC & S/4HANA</b>
   <br/>
   Building efficient, scalable, and business-driven SAP solutions.
 </p>
