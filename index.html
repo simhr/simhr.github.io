@@ -1,0 +1,2411 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Simranjeet Singh · SAP ABAP Developer</title>
+  <meta name="description"
+    content="Simranjeet Singh is an SAP ABAP developer in Ludhiana building ALV reports, Adobe Forms, SmartForms, BAdIs and S/4HANA-ready code across SD, MM and FI.">
+  <meta name="author" content="Simranjeet Singh">
+  <meta name="theme-color" content="#090e18">
+  <link rel="canonical" href="https://simhr.github.io/">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://simhr.github.io/">
+  <meta property="og:title" content="Simranjeet Singh · SAP ABAP Developer">
+  <meta property="og:description"
+    content="Simranjeet Singh is an SAP ABAP developer in Ludhiana building ALV reports, Adobe Forms, SmartForms, BAdIs and S/4HANA-ready code across SD, MM and FI.">
+  <meta property="og:image" content="https://simhr.github.io/assets/img/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Simranjeet Singh, SAP ABAP Developer">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Simranjeet Singh · SAP ABAP Developer">
+  <meta name="twitter:description"
+    content="Simranjeet Singh is an SAP ABAP developer in Ludhiana building ALV reports, Adobe Forms, SmartForms, BAdIs and S/4HANA-ready code across SD, MM and FI.">
+  <meta name="twitter:image" content="https://simhr.github.io/assets/img/og-cover.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Martian+Mono:wdth,wght@75..112.5,400..800&display=swap">
+  <style>
+    :root {
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    /* Layout: SAP developer meets terminal. Sticky bar, two-column hero with photo,
+   then résumé sections in order on a 1180px grid. Dark by default, light on toggle. */
+    :root {
+      --bg: #090e18;
+      --bg-2: #0c1220;
+      --surface: #101827;
+      --surface-2: #151f32;
+      --line: #1e2a3f;
+      --line-2: #2a3851;
+      --ink: #e8edf5;
+      --muted: #9aa7bb;
+      --faint: #6b7990;
+      --accent: #f5b32b;
+      --accent-text: #f5b32b;
+      --accent-ink: #1b1300;
+      --accent-soft: rgba(245, 179, 43, .11);
+      --accent-line: rgba(245, 179, 43, .34);
+      --link: #7cb9ff;
+      --ok: #3dd68c;
+      --ok-soft: rgba(61, 214, 140, .13);
+      --ok-ring: rgba(61, 214, 140, .45);
+      --err: #ff8a8a;
+      --header-bg: rgba(9, 14, 24, .82);
+      --backdrop: rgba(4, 7, 13, .66);
+      --glow: rgba(245, 179, 43, .15);
+      --dots: rgba(148, 161, 182, .15);
+      --shadow: 0 1px 0 rgba(255, 255, 255, .03) inset, 0 24px 60px -28px rgba(0, 0, 0, .75);
+      --shadow-pop: 0 30px 80px -20px rgba(0, 0, 0, .7);
+      --paper: #ffffff;
+
+      /* the terminal window stays dark in both themes */
+      --term-bg: #070b13;
+      --term-bar: #0d1421;
+      --term-line: #1c273a;
+      --term-ink: #d7e0ec;
+      --term-dim: #6c7b94;
+      --term-ps: #3dd68c;
+
+      --font-display: 'Martian Mono', 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+      --font-body: 'Geist', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      --font-code: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+
+      --radius: 14px;
+      --maxw: 1120px;
+      --header-h: 62px;
+      color-scheme: dark;
+    }
+
+    :root[data-theme="light"] {
+      --bg: #f4f6f9;
+      --bg-2: #edf1f6;
+      --surface: #ffffff;
+      --surface-2: #f5f7fb;
+      --line: #dde3ec;
+      --line-2: #c9d2de;
+      --ink: #0d1526;
+      --muted: #4f5c74;
+      --faint: #7c889e;
+      --accent: #f0a800;
+      --accent-text: #8f5f00;
+      --accent-ink: #1b1300;
+      --accent-soft: rgba(240, 168, 0, .12);
+      --accent-line: rgba(160, 108, 0, .32);
+      --link: #0a64c2;
+      --ok: #0f8f55;
+      --ok-soft: rgba(15, 143, 85, .1);
+      --ok-ring: rgba(15, 143, 85, .35);
+      --err: #c93b3b;
+      --header-bg: rgba(244, 246, 249, .86);
+      --backdrop: rgba(13, 21, 38, .45);
+      --glow: rgba(240, 168, 0, .18);
+      --dots: rgba(83, 96, 121, .17);
+      --shadow: 0 1px 2px rgba(13, 21, 38, .04), 0 22px 50px -30px rgba(13, 21, 38, .35);
+      --shadow-pop: 0 30px 80px -24px rgba(13, 21, 38, .35);
+      color-scheme: light;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      scroll-padding-top: calc(var(--header-h) + 8px);
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 400 16px/1.6 var(--font-body);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0 0 auto;
+      height: env(safe-area-inset-top, 0px);
+      z-index: 60;
+      background: var(--bg);
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: var(--accent-ink);
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 6px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      text-wrap: balance;
+    }
+
+    p {
+      text-wrap: pretty;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: calc(var(--maxw) + 40px);
+      margin-inline: auto;
+      padding-left: max(20px, env(safe-area-inset-left, 0px));
+      padding-right: max(20px, env(safe-area-inset-right, 0px));
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* ---------- buttons ---------- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      height: 44px;
+      padding: 0 18px;
+      border-radius: 10px;
+      border: 1px solid var(--line-2);
+      background: var(--surface);
+      color: var(--ink);
+      font: 600 14px/1 var(--font-code);
+      text-decoration: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: transform .15s ease, border-color .15s ease, filter .15s ease;
+    }
+
+    .btn:hover {
+      border-color: var(--accent-line);
+      transform: translateY(-1px);
+    }
+
+    .btn svg {
+      width: 16px;
+      height: 16px;
+      flex: none;
+    }
+
+    .btn--primary {
+      background: var(--accent);
+      border-color: transparent;
+      color: var(--accent-ink);
+    }
+
+    .btn--primary:hover {
+      border-color: transparent;
+      filter: brightness(1.06);
+    }
+
+    .btn--sm {
+      height: 38px;
+      padding: 0 14px;
+      font-size: 13px;
+      border-radius: 10px;
+    }
+
+    .icon {
+      width: 18px;
+      height: 18px;
+      flex: none;
+    }
+
+    /* ---------- top bar ---------- */
+    .topbar {
+      position: sticky;
+      top: env(safe-area-inset-top, 0px);
+      z-index: 50;
+      background: var(--header-bg);
+      -webkit-backdrop-filter: saturate(1.4) blur(14px);
+      backdrop-filter: saturate(1.4) blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar__inner {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      height: var(--header-h);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font: 600 15px/1 var(--font-code);
+      color: var(--ink);
+      flex: none;
+    }
+
+    .brand__mark {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: 9px;
+      background: var(--accent);
+      color: var(--accent-ink);
+      font: 800 13px/1 var(--font-display);
+      font-stretch: 87.5%;
+      letter-spacing: -.06em;
+    }
+
+    .brand__name b {
+      color: var(--accent-text);
+      font-weight: 600;
+    }
+
+    .nav {
+      display: none;
+      gap: 2px;
+      margin-left: 8px;
+    }
+
+    .nav a {
+      position: relative;
+      padding: 8px 10px;
+      border-radius: 8px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color .15s ease, background .15s ease;
+    }
+
+    .nav a:hover {
+      color: var(--ink);
+      background: var(--surface);
+    }
+
+    .nav a.is-active {
+      color: var(--ink);
+    }
+
+    .nav a.is-active::after {
+      content: "";
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 2px;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--accent);
+    }
+
+    .topbar__right {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .iconbtn {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line-2);
+      border-radius: 10px;
+      background: var(--surface);
+      color: var(--ink);
+      cursor: pointer;
+      transition: border-color .15s ease;
+    }
+
+    .iconbtn:hover {
+      border-color: var(--accent-line);
+    }
+
+    .i-moon,
+    .i-shut {
+      display: none;
+    }
+
+    :root[data-theme="light"] .i-sun {
+      display: none;
+    }
+
+    :root[data-theme="light"] .i-moon {
+      display: block;
+    }
+
+    .menubtn[aria-expanded="true"] .i-open {
+      display: none;
+    }
+
+    .menubtn[aria-expanded="true"] .i-shut {
+      display: block;
+    }
+
+    .btn--resume {
+      display: none;
+    }
+
+    @media (min-width: 560px) {
+      .btn--resume {
+        display: inline-flex;
+      }
+    }
+
+    @media (min-width: 1180px) {
+      .nav {
+        display: flex;
+      }
+
+      .menubtn {
+        display: none;
+      }
+    }
+
+    .mnav {
+      border-top: 1px solid var(--line);
+      background: var(--bg);
+    }
+
+    .mnav__inner {
+      display: grid;
+      padding-block: 8px 16px;
+    }
+
+    .mnav a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 4px;
+      border-bottom: 1px solid var(--line);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .mnav a:last-child {
+      border-bottom: 0;
+    }
+
+    .mnav__resume {
+      color: var(--accent-text) !important;
+      font-family: var(--font-code);
+      font-size: 14px !important;
+    }
+
+    .mnav__resume svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    @media (min-width: 1180px) {
+      .mnav {
+        display: none !important;
+      }
+    }
+
+    /* ---------- hero ---------- */
+    .hero {
+      position: relative;
+      overflow-x: clip;
+      padding-block: clamp(40px, 6vw, 88px) clamp(56px, 8vw, 100px);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(var(--dots) 1px, transparent 1.2px);
+      background-size: 22px 22px;
+      -webkit-mask-image: radial-gradient(ellipse 70% 60% at 30% 30%, #000 20%, transparent 75%);
+      mask-image: radial-gradient(ellipse 70% 60% at 30% 30%, #000 20%, transparent 75%);
+      pointer-events: none;
+    }
+
+    .hero__grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: clamp(40px, 6vw, 72px);
+      align-items: center;
+    }
+
+    .hero__grid>* {
+      min-width: 0;
+    }
+
+    @media (min-width: 960px) {
+      .hero__grid {
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, .8fr);
+      }
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0;
+      padding: 6px 13px 6px 11px;
+      border: 1px solid var(--line-2);
+      border-radius: 999px;
+      background: var(--surface);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .status b {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--ok);
+      flex: none;
+      animation: pulse 2.2s ease-out infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 var(--ok-ring);
+      }
+
+      75% {
+        box-shadow: 0 0 0 7px transparent;
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 transparent;
+      }
+    }
+
+    .eyebrow {
+      margin: 26px 0 12px;
+      font: 500 12.5px/1.4 var(--font-code);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--accent-text);
+    }
+
+    .hero__name {
+      margin: 0;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-stretch: 87.5%;
+      font-size: clamp(2.6rem, .7rem + 8.2vw, 5.5rem);
+      line-height: .98;
+      letter-spacing: -.05em;
+    }
+
+    .hero__name .line {
+      display: block;
+    }
+
+    .caret {
+      display: inline-block;
+      width: .52em;
+      height: .11em;
+      margin-left: .06em;
+      background: var(--accent);
+      animation: blink 1.1s steps(1) infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .hero__type {
+      margin: 22px 0 0;
+      min-height: 1.6em;
+      font: 500 clamp(15px, 1.4vw, 17px)/1.6 var(--font-code);
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .pr {
+      color: var(--accent-text);
+      margin-right: 10px;
+      font-family: var(--font-code);
+      font-weight: 600;
+    }
+
+    .tcaret {
+      display: inline-block;
+      width: 8px;
+      height: 1.05em;
+      margin-left: 2px;
+      vertical-align: -.16em;
+      background: var(--accent);
+      animation: blink 1.1s steps(1) infinite;
+    }
+
+    .hero__lede {
+      margin: 16px 0 30px;
+      max-width: 52ch;
+      font-size: clamp(16px, 1.5vw, 18px);
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .hero__lede strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .hero__cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .specs {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin: 38px 0 0;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      max-width: 520px;
+    }
+
+    .specs div {
+      min-width: 0;
+    }
+
+    .specs dt {
+      font: 500 11px/1.3 var(--font-code);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--faint);
+    }
+
+    .specs dd {
+      margin: 6px 0 0;
+      font: 600 clamp(14px, 1.6vw, 17px)/1.3 var(--font-code);
+      color: var(--ink);
+    }
+
+    .hero__photo {
+      position: relative;
+      margin: 0;
+      justify-self: center;
+      width: min(100%, 400px);
+    }
+
+    .hero__photo::before {
+      content: "";
+      position: absolute;
+      inset: 6% -14% 6%;
+      background: radial-gradient(closest-side, var(--glow), transparent);
+      filter: blur(18px);
+      z-index: -1;
+    }
+
+    .photo-frame {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      max-width: 100%;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid var(--line-2);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .photo-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-frame::after {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      pointer-events: none;
+      background:
+        linear-gradient(var(--accent), var(--accent)) top left / 22px 2px no-repeat,
+        linear-gradient(var(--accent), var(--accent)) top left / 2px 22px no-repeat,
+        linear-gradient(var(--accent), var(--accent)) top right / 22px 2px no-repeat,
+        linear-gradient(var(--accent), var(--accent)) top right / 2px 22px no-repeat,
+        linear-gradient(var(--accent), var(--accent)) bottom left / 22px 2px no-repeat,
+        linear-gradient(var(--accent), var(--accent)) bottom left / 2px 22px no-repeat,
+        linear-gradient(var(--accent), var(--accent)) bottom right / 22px 2px no-repeat,
+        linear-gradient(var(--accent), var(--accent)) bottom right / 2px 22px no-repeat;
+    }
+
+    /* ---------- sections ---------- */
+    .section {
+      position: relative;
+      padding-block: clamp(60px, 8vw, 104px);
+    }
+
+    .section--alt {
+      background: var(--bg-2);
+      border-block: 1px solid var(--line);
+    }
+
+    .sec-head {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: clamp(26px, 3.5vw, 40px);
+    }
+
+    .sec-head::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .sec-head h2 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-stretch: 87.5%;
+      font-size: clamp(1.5rem, 1rem + 1.9vw, 2.25rem);
+      line-height: 1.15;
+      letter-spacing: -.04em;
+    }
+
+    .taglist {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .tag {
+      padding: 6px 11px;
+      border-radius: 8px;
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      font-size: 14px;
+      line-height: 1.35;
+      color: var(--ink);
+    }
+
+    .bullets {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .bullets li {
+      position: relative;
+      padding-left: 22px;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.65;
+    }
+
+    .bullets li::before {
+      content: "›";
+      position: absolute;
+      left: 4px;
+      top: 0;
+      font: 700 16px/1.6 var(--font-code);
+      color: var(--accent-text);
+    }
+
+    /* ---------- about ---------- */
+    .about {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    .about>* {
+      min-width: 0;
+    }
+
+    @media (min-width: 960px) {
+      .about {
+        grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+        align-items: stretch;
+      }
+    }
+
+    .win {
+      display: flex;
+      flex-direction: column;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--term-line);
+      background: var(--term-bg);
+      color: var(--term-ink);
+      box-shadow: var(--shadow);
+    }
+
+    .win__bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 14px;
+      background: var(--term-bar);
+      border-bottom: 1px solid var(--term-line);
+      font: 12px/1.3 var(--font-code);
+      color: var(--term-dim);
+    }
+
+    .win__dots {
+      display: flex;
+      gap: 6px;
+      flex: none;
+    }
+
+    .win__dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--term-line);
+    }
+
+    .win__title {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .term {
+      padding: 18px 20px 20px;
+      font: 14px/1.7 var(--font-code);
+    }
+
+    .tl {
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .tl--gap {
+      margin-top: 14px;
+    }
+
+    .tl--text {
+      color: var(--term-ink);
+      max-width: 72ch;
+    }
+
+    .ps {
+      color: var(--term-ps);
+      margin-right: 6px;
+    }
+
+    @media (max-width: 520px) {
+      .term {
+        font-size: 13px;
+        padding: 16px;
+      }
+    }
+
+    .facts {
+      margin: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      overflow: hidden;
+    }
+
+    .facts div {
+      display: grid;
+      grid-template-columns: 116px minmax(0, 1fr);
+      gap: 12px;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .facts div:last-child {
+      border-bottom: 0;
+    }
+
+    .facts dt {
+      font: 500 11px/1.7 var(--font-code);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--faint);
+    }
+
+    .facts dd {
+      margin: 0;
+      font-size: 15px;
+      color: var(--ink);
+    }
+
+    /* ---------- skills ---------- */
+    .skills {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    @media (min-width: 680px) {
+      .skills {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1000px) {
+      .skills {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .card {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      transition: border-color .2s ease;
+    }
+
+    .card:hover {
+      border-color: var(--line-2);
+    }
+
+    .card__label {
+      margin: 0;
+      font: 600 12px/1.3 var(--font-code);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent-text);
+    }
+
+    /* ---------- experience ---------- */
+    .jobs {
+      display: grid;
+      gap: 16px;
+    }
+
+    .job {
+      padding: clamp(20px, 2.5vw, 28px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .job__head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px 20px;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px dashed var(--line-2);
+    }
+
+    .job__head h3 {
+      margin: 0;
+      font: 600 19px/1.3 var(--font-body);
+      letter-spacing: -.01em;
+    }
+
+    .job__org {
+      margin: 4px 0 0;
+      color: var(--accent-text);
+      font: 500 14px/1.4 var(--font-code);
+    }
+
+    .job__when {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      font: 500 13px/1.4 var(--font-code);
+      color: var(--muted);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font: 600 11px/1 var(--font-code);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .pill--active {
+      background: var(--ok-soft);
+      color: var(--ok);
+    }
+
+    .pill--active::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--ok);
+      animation: pulse 2.2s ease-out infinite;
+    }
+
+    /* ---------- projects ---------- */
+    .projects {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    @media (min-width: 900px) {
+      .projects {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .proj {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: clamp(20px, 2.5vw, 28px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .proj__kicker {
+      margin: 0;
+      font: 500 12px/1.4 var(--font-code);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent-text);
+    }
+
+    .proj h3 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-stretch: 87.5%;
+      font-size: clamp(1.15rem, .95rem + .8vw, 1.45rem);
+      line-height: 1.25;
+      letter-spacing: -.03em;
+    }
+
+    .flowline {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+      margin: auto 0 0;
+      padding: 14px 0 0;
+      border-top: 1px dashed var(--line-2);
+    }
+
+    .flowline li {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font: 500 12px/1 var(--font-code);
+      color: var(--muted);
+    }
+
+    .flowline li:not(:last-child)::after {
+      content: "→";
+      color: var(--accent-text);
+    }
+
+    .flowline li:first-child,
+    .flowline li:last-child {
+      color: var(--ink);
+    }
+
+    /* ---------- certifications ---------- */
+    .certs {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    @media (min-width: 640px) {
+      .certs {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .cert {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      overflow: hidden;
+      transition: border-color .2s ease, transform .2s ease;
+    }
+
+    .cert:hover {
+      border-color: var(--line-2);
+      transform: translateY(-2px);
+    }
+
+    .cert__thumb {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      padding: 0;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      background: var(--paper);
+      cursor: zoom-in;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+    }
+
+    .cert__thumb img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform .35s ease;
+    }
+
+    .cert:hover .cert__thumb img {
+      transform: scale(1.03);
+    }
+
+    .cert__body {
+      display: grid;
+      gap: 4px;
+      padding: 14px 16px 16px;
+    }
+
+    .cert h3 {
+      margin: 0;
+      font: 600 15.5px/1.4 var(--font-body);
+    }
+
+    .cert__meta {
+      margin: 0;
+      font: 500 12.5px/1.4 var(--font-code);
+      color: var(--muted);
+    }
+
+    .more-certs {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    @media (min-width: 640px) {
+      .more-certs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .more-cert {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 4px 12px;
+      padding: 12px 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: var(--ink);
+      text-align: left;
+      cursor: pointer;
+      font-size: 14.5px;
+      font-weight: 600;
+      transition: border-color .2s ease;
+    }
+
+    .more-cert:hover {
+      border-color: var(--accent-line);
+    }
+
+    .more-cert__view {
+      margin-left: auto;
+      font: 500 12.5px/1 var(--font-code);
+      color: var(--link);
+    }
+
+    /* ---------- education ---------- */
+    .edu {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    @media (min-width: 760px) {
+      .edu {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .edu__item {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .edu__main {
+      min-width: 0;
+      display: grid;
+      gap: 4px;
+    }
+
+    .edu__item h3 {
+      margin: 0;
+      font: 600 17.5px/1.35 var(--font-body);
+    }
+
+    .edu__item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .edu__item .edu__when {
+      font: 500 12.5px/1.5 var(--font-code);
+      color: var(--faint);
+      margin-top: 4px;
+    }
+
+    .edu__score {
+      flex: none;
+      text-align: right;
+    }
+
+    .edu__score b {
+      display: block;
+      font: 800 clamp(22px, 2.6vw, 30px)/1 var(--font-display);
+      font-stretch: 87.5%;
+      letter-spacing: -.04em;
+      color: var(--accent-text);
+    }
+
+    .edu__score small {
+      display: block;
+      margin-top: 6px;
+      font: 11px/1 var(--font-code);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--faint);
+    }
+
+    /* ---------- contact ---------- */
+    .contact {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .contact>* {
+      min-width: 0;
+    }
+
+    @media (min-width: 960px) {
+      .contact {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: start;
+      }
+    }
+
+    .clist {
+      display: grid;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      overflow: hidden;
+    }
+
+    .crow {
+      display: grid;
+      grid-template-columns: 40px minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: center;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--line);
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .crow:last-child {
+      border-bottom: 0;
+    }
+
+    .crow--link {
+      transition: background .15s ease;
+    }
+
+    .crow--link:hover {
+      background: var(--surface-2);
+    }
+
+    .crow--link:hover .crow__val {
+      color: var(--link);
+    }
+
+    .crow__ic {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      color: var(--accent-text);
+    }
+
+    .crow__ic svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .crow__lbl {
+      display: block;
+      font: 500 11px/1.3 var(--font-code);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--faint);
+    }
+
+    .crow__val {
+      display: block;
+      font-size: 15.5px;
+      color: var(--ink);
+      overflow-wrap: anywhere;
+      text-decoration: none;
+    }
+
+    a.crow__val:hover {
+      color: var(--link);
+    }
+
+    .crow__go {
+      color: var(--faint);
+      display: grid;
+      place-items: center;
+    }
+
+    .crow__go svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .copybtn {
+      height: 32px;
+      padding: 0 12px;
+      border-radius: 8px;
+      border: 1px solid var(--line-2);
+      background: transparent;
+      color: var(--muted);
+      font: 500 12px/1 var(--font-code);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .copybtn:hover {
+      color: var(--ink);
+      border-color: var(--accent-line);
+    }
+
+    .copybtn.is-done {
+      color: var(--ok);
+      border-color: var(--ok);
+    }
+
+    .composer {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      overflow: hidden;
+    }
+
+    .composer__bar {
+      padding: 13px 18px;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface-2);
+      font: 600 13px/1.3 var(--font-code);
+      color: var(--ink);
+    }
+
+    .composer form {
+      display: grid;
+      gap: 16px;
+      padding: 18px;
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .field label {
+      font: 500 11px/1.3 var(--font-code);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--faint);
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      padding: 12px 13px;
+      border-radius: 10px;
+      border: 1px solid var(--line-2);
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.5 var(--font-body);
+      outline: 0;
+      transition: border-color .15s ease, box-shadow .15s ease;
+    }
+
+    .field textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-soft);
+    }
+
+    .field.is-invalid input,
+    .field.is-invalid textarea {
+      border-color: var(--err);
+    }
+
+    .field__err {
+      margin: 0;
+      font: 500 12.5px/1.4 var(--font-code);
+      color: var(--err);
+    }
+
+    .composer__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .composer__actions .btn {
+      flex: 1 1 auto;
+    }
+
+    .composer__note {
+      margin: 0;
+      font: 12.5px/1.5 var(--font-code);
+      color: var(--faint);
+    }
+
+    /* ---------- footer ---------- */
+    .foot {
+      border-top: 1px solid var(--line);
+    }
+
+    .foot__inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px 24px;
+      padding-block: 20px calc(20px + env(safe-area-inset-bottom, 0px));
+      font: 12.5px/1.5 var(--font-code);
+      color: var(--faint);
+    }
+
+    .foot a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .foot a:hover {
+      color: var(--ink);
+    }
+
+    /* ---------- lightbox ---------- */
+    .lightbox {
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      width: min(1040px, calc(100vw - 24px));
+      max-width: none;
+      max-height: calc(100dvh - 24px);
+      overflow: visible;
+    }
+
+    .lightbox::backdrop {
+      background: var(--backdrop);
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+    }
+
+    .lightbox figure {
+      margin: 0;
+      background: var(--surface);
+      border: 1px solid var(--line-2);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow-pop);
+    }
+
+    .lightbox__img {
+      display: grid;
+      place-items: center;
+      background: var(--paper);
+    }
+
+    .lightbox img {
+      display: block;
+      max-width: 100%;
+      max-height: calc(100dvh - 120px);
+      width: auto;
+      height: auto;
+    }
+
+    .lightbox figcaption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 12px 10px 16px;
+      font: 13px/1.4 var(--font-code);
+      color: var(--muted);
+    }
+
+    /* ---------- toast ---------- */
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+      z-index: 90;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: calc(100vw - 32px);
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--line-2);
+      background: var(--surface);
+      color: var(--ink);
+      box-shadow: var(--shadow-pop);
+      font: 13px/1.4 var(--font-code);
+      transform: translate(-50%, 16px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+
+    .toast.is-on {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    .toast__ic {
+      width: 18px;
+      height: 18px;
+      border-radius: 5px;
+      display: grid;
+      place-items: center;
+      background: var(--ok);
+      color: var(--bg);
+      flex: none;
+    }
+
+    .toast__ic svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+      }
+    }
+  </style>
+  <script
+    type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Simranjeet Singh", "jobTitle": "SAP ABAP Developer", "worksFor": {"@type": "Organization", "name": "Unbrako"}, "address": {"@type": "PostalAddress", "addressLocality": "Ludhiana", "addressRegion": "Punjab", "addressCountry": "IN"}, "email": "mailto:simhr0001@gmail.com", "url": "https://simhr.github.io/", "image": "https://simhr.github.io/assets/img/profile.jpg", "alumniOf": {"@type": "CollegeOrUniversity", "name": "Guru Nanak Dev Engineering College, Ludhiana"}, "sameAs": ["https://www.linkedin.com/in/simhr/", "https://github.com/simhr", "https://leetcode.com/u/simhr001/"], "knowsAbout": ["SAP ABAP", "SAP S/4HANA", "SAP HANA", "ALV Reports", "Adobe Forms", "SmartForms", "BAdI", "Module Pool Programming", "Frappe Framework", "Python"]}</script>
+</head>
+
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+        stroke-linecap="round">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4" />
+      </symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.5 13.2A8.5 8.5 0 1 1 10.8 3.5a6.6 6.6 0 0 0 9.7 9.7z" />
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+        stroke-linecap="round">
+        <path d="M4 7h16M4 12h16M4 17h16" />
+      </symbol>
+      <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round">
+        <path d="M6 6l12 12M18 6 6 18" />
+      </symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14M13 6l6 6-6 6" />
+      </symbol>
+      <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 4v11M7 10l5 5 5-5M5 20h14" />
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12.5l4.5 4.5L19 7.5" />
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+        stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="5" width="18" height="14" rx="2.5" />
+        <path d="M3.5 7l8.5 6 8.5-6" />
+      </symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path
+          d="M6 3.5h3l1.8 4.6-2.3 1.5a11 11 0 0 0 5.9 5.9l1.5-2.3 4.6 1.8v3a2 2 0 0 1-2.1 2A16.5 16.5 0 0 1 4 5.6a2 2 0 0 1 2-2.1z" />
+      </symbol>
+      <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1" />
+        <path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1" />
+      </symbol>
+      <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8.5 7.5 4 12l4.5 4.5M15.5 7.5 20 12l-4.5 4.5M13.5 5l-3 14" />
+      </symbol>
+      <symbol id="i-term" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+        stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="16" rx="2.5" />
+        <path d="M7 9.5l3 2.5-3 2.5M12.5 15h4.5" />
+      </symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 5.5h16v11H9.5L4 20.5z" />
+        <path d="M8 10h8M8 13h5" />
+      </symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path d="M12 21s7-6.2 7-11.5a7 7 0 0 0-14 0C5 14.8 12 21 12 21z" />
+        <circle cx="12" cy="9.5" r="2.5" />
+      </symbol>
+      <symbol id="i-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="#top" aria-label="Simranjeet Singh, back to top">
+        <span class="brand__mark" aria-hidden="true">SS</span>
+        <span class="brand__name">Simranjeet Singh</b></span>
+      </a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="topbar__right">
+        <button class="iconbtn" type="button" id="theme-toggle" aria-label="Switch to light theme">
+          <svg class="icon i-sun">
+            <use href="#i-sun" />
+          </svg>
+          <svg class="icon i-moon">
+            <use href="#i-moon" />
+          </svg>
+        </button>
+        <a class="btn btn--primary btn--sm btn--resume" href="assets/docs/Simranjeet_Singh_Resume.pdf" target="_blank"
+          rel="noopener">Resume</a>
+        <button class="iconbtn menubtn" type="button" id="menu-btn" aria-label="Open menu" aria-expanded="false"
+          aria-controls="mnav">
+          <svg class="icon i-open">
+            <use href="#i-menu" />
+          </svg>
+          <svg class="icon i-shut">
+            <use href="#i-close" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <nav class="mnav" id="mnav" aria-label="Menu" hidden>
+      <div class="wrap mnav__inner">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+        <a class="mnav__resume" href="assets/docs/Simranjeet_Singh_Resume.pdf" target="_blank" rel="noopener">Download
+          Resume<svg aria-hidden="true">
+            <use href="#i-download" />
+          </svg></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="top" aria-label="Introduction">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="status"><span class="pulse" aria-hidden="true"></span> Currently at <b>Oswal Woolen Mills LTD.</b> ·
+            Ludhiana, Punjab</p>
+          <p class="eyebrow">SAP ABAP Developer</p>
+          <h1 class="hero__name"><span class="line">Simranjeet</span><span class="line">Singh<span class="caret"
+                aria-hidden="true"></span></span></h1>
+          <p class="hero__type"><span class="sr-only">ALV Reports, Adobe Forms, SmartForms, BAdIs, Module Pool
+              Programming and S/4HANA migration.</span><span aria-hidden="true"><span class="pr">›</span><span
+                id="typed">ALV Reports</span><span class="tcaret"></span></span></p>
+          <p class="hero__lede">Custom development, enhancements, integrations and forms for <strong>SD, MM and
+              FI</strong> modules across <strong>SAP ECC and S/4HANA</strong>.</p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#contact">Contact me <svg aria-hidden="true">
+                <use href="#i-arrow" />
+              </svg></a>
+            <a class="btn" href="assets/docs/Simranjeet_Singh_Resume.pdf" target="_blank" rel="noopener">Download Resume
+              <svg aria-hidden="true">
+                <use href="#i-download" />
+              </svg></a>
+          </div>
+          <dl class="specs">
+            <div>
+              <dt>Experience</dt>
+              <dd><span data-years-since="2024-07">3+</span> years</dd>
+            </div>
+            <div>
+              <dt>Modules</dt>
+              <dd>SD · MM · FI</dd>
+            </div>
+            <div>
+              <dt>Systems</dt>
+              <dd>ECC · S/4HANA</dd>
+            </div>
+          </dl>
+        </div>
+
+        <figure class="hero__photo">
+          <div class="photo-frame">
+            <img src="assets/img/profile.jpg" alt="Simranjeet Singh" width="720" height="900" fetchpriority="high">
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section section--alt" id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="about-title"><span class="pr" aria-hidden="true">›</span>About</h2>
+        </div>
+        <div class="about">
+          <div class="win" aria-label="Summary">
+            <div class="win__bar">
+              <span class="win__dots" aria-hidden="true"><span></span><span></span><span></span></span>
+              <span class="win__title">simranjeet@owm: ~</span>
+            </div>
+            <div class="term">
+              <p class="tl"><span class="ps">simranjeet@unbrako:~$</span> whoami</p>
+              <p class="tl">Simranjeet Singh · SAP ABAP Developer</p>
+              <p class="tl tl--gap"><span class="ps">simranjeet@owm:~$</span> cat summary.txt</p>
+              <p class="tl tl--text">SAP ABAP Developer with 3 years of experience across SAP ECC and S/4HANA
+                environments. Proficient in custom development, enhancements, integrations, and forms for SD, MM, and FI
+                modules. Proven ability to collaborate with functional consultants, optimize ABAP code for SAP HANA, and
+                deliver production-ready solutions aligned with business requirements.</p>
+              <p class="tl tl--gap"><span class="ps">simranjeet@owm:~$</span> <span class="tcaret"></span></p>
+            </div>
+          </div>
+          <dl class="facts">
+            <div>
+              <dt>Current role</dt>
+              <dd>Senior SAP ABAP Developer</dd>
+            </div>
+            <div>
+              <dt>Location</dt>
+              <dd>Ludhiana, Punjab (141003)</dd>
+            </div>
+            <div>
+              <dt>Systems</dt>
+              <dd>SAP ECC · SAP S/4HANA</dd>
+            </div>
+            <div>
+              <dt>Modules</dt>
+              <dd>SD · MM · FI</dd>
+            </div>
+            <div>
+              <dt>Education</dt>
+              <dd>B.Tech, Computer Science &amp; Engineering</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="skills-title"><span class="pr" aria-hidden="true">›</span>Technical Skills</h2>
+        </div>
+        <div class="skills">
+          <article class="card">
+            <h3 class="card__label">SAP ABAP</h3>
+            <ul class="taglist">
+              <li class="tag">Classical Reports</li>
+              <li class="tag">Interactive Reports</li>
+              <li class="tag">ALV Reports</li>
+              <li class="tag">Module Pool Programming</li>
+              <li class="tag">Object-Oriented ABAP</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3 class="card__label">Forms &amp; Outputs</h3>
+            <ul class="taglist">
+              <li class="tag">Adobe Forms</li>
+              <li class="tag">SmartForms</li>
+              <li class="tag">SAP Scripts</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3 class="card__label">Enhancements</h3>
+            <ul class="taglist">
+              <li class="tag">BAdI Implementations</li>
+              <li class="tag">User Exits</li>
+              <li class="tag">Implicit Enhancements</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3 class="card__label">ABAP Dictionary</h3>
+            <ul class="taglist">
+              <li class="tag">Tables</li>
+              <li class="tag">Structures</li>
+              <li class="tag">Views</li>
+              <li class="tag">Search Helps</li>
+              <li class="tag">Lock Objects</li>
+              <li class="tag">Domains</li>
+              <li class="tag">Data Elements</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3 class="card__label">Programming Languages</h3>
+            <ul class="taglist">
+              <li class="tag">ABAP</li>
+              <li class="tag">Python</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3 class="card__label">Operating Systems</h3>
+            <ul class="taglist">
+              <li class="tag">Linux</li>
+              <li class="tag">Windows</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section section--alt" id="experience" aria-labelledby="exp-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="exp-title"><span class="pr" aria-hidden="true">›</span>Work Experience</h2>
+        </div>
+        <div class="jobs">
+
+          <article class="job">
+            <header class="job__head">
+              <div>
+                <h3>Senior SAP ABAP Developer</h3>
+                <p class="job__org">Oswal Woolen Mills LTD. Ludhiana</p>
+              </div>
+              <div class="job__when"><span class="pill pill--active">Current</span><span>July 2026 – Present</span>
+              </div>
+            </header>
+              <ul class="bullets">
+                <li>Owned the development lifecycle of custom SAP applications, from requirement analysis and solution design to implementation, testing, and deployment.</li>
+                <li>Handled complex ABAP developments involving BAPIs, RFCs, IDocs, BADIs, and custom interfaces to integrate SAP processes efficiently.</li>
+                <li>Developed business-critical reports and automation solutions to streamline operational workflows and improve data accuracy.</li>
+                <li>Managed production support activities, analyzed complex system issues, and implemented long-term technical fixes to ensure business continuity.</li>
+                <li>Worked closely with cross-functional teams to drive technical solutions, review development approaches, and ensure adherence to SAP coding standards.</li>
+              </ul> 
+          </article>
+
+          <article class="job">
+            <header class="job__head">
+              <div>
+                <h3>SAP ABAP Developer</h3>
+                <p class="job__org">Unbrako</p>
+              </div>
+              <div class="job__when"></span><span>July 2023 – June 2026</span>
+              </div>
+            </header>
+            <ul class="bullets">
+              <li>Developed custom SAP ABAP solutions including ALV Reports, SmartForms, Adobe Forms, and Module Pool
+                applications across SD, MM, and FI modules.</li>
+              <li>Implemented enhancements using BAdIs, User Exits, Customer Exits, and Implicit Enhancements to fulfill
+                business requirements.</li>
+              <li>Performed debugging, performance optimization, and technical support to ensure efficient and reliable
+                SAP applications.</li>
+              <li>Designed and developed Data Dictionary objects including Tables, Structures, Views, Search Helps, and
+                Lock Objects to support custom developments.</li>
+              <li>Collaborated with functional consultants and end users to analyze requirements, prepare technical
+                specifications, and deliver scalable SAP solutions.</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <header class="job__head">
+              <div>
+                <h3>Frappe &amp; ERP Developer</h3>
+                <p class="job__org">Software Development Centre</p>
+              </div>
+              <div class="job__when"><span>June 2022 – June 2023</span></div>
+            </header>
+            <ul class="bullets">
+              <li>Designed and developed the Construction &amp; Maintenance Cell (CMC) Management System using the
+                Frappe Framework to digitize asset maintenance and procurement processes across the college.</li>
+              <li>Implemented a complete workflow covering complaint registration, asset repair requests, procurement
+                requests, HOD approvals, CMC Head approvals, task assignment, and closure tracking.</li>
+              <li>Automated approval processes, status notifications, and maintenance tracking, reducing manual
+                paperwork and improving operational transparency.</li>
+              <li>Participated in requirement gathering, testing, deployment, user training, and post-deployment
+                support.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects" aria-labelledby="proj-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="proj-title"><span class="pr" aria-hidden="true">›</span>Projects</h2>
+        </div>
+        <div class="projects">
+          <article class="proj">
+            <p class="proj__kicker">Unbrako</p>
+            <h3>SAP ECC to SAP S/4HANA Migration</h3>
+            <ul class="bullets">
+              <li>Analyzed and remediated custom ABAP objects for S/4HANA compatibility; optimized DB access using
+                HANA-compliant Open SQL.</li>
+              <li>Conducted custom code analysis, readiness checks, and supported testing, defect resolution, and
+                post-migration monitoring.</li>
+            </ul>
+            <ul class="flowline" aria-label="Migration stages">
+              <li>ECC</li>
+              <li>Code analysis</li>
+              <li>Remediation</li>
+              <li>Testing</li>
+              <li>S/4HANA</li>
+            </ul>
+          </article>
+          <article class="proj">
+            <p class="proj__kicker">Frappe / ERPNext</p>
+            <h3>CMC Management System</h3>
+            <ul class="bullets">
+              <li>Built a web-based complaint and asset maintenance system covering end-to-end workflow: registration,
+                approval, execution, and procurement.</li>
+              <li>Developed custom DocTypes, automated approval workflows, and dashboards; deployed and supported in
+                production.</li>
+            </ul>
+            <ul class="flowline" aria-label="Workflow stages">
+              <li>Registration</li>
+              <li>Approval</li>
+              <li>Execution</li>
+              <li>Procurement</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="section section--alt" id="certifications" aria-labelledby="cert-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="cert-title"><span class="pr" aria-hidden="true">›</span>Certifications</h2>
+        </div>
+        <div class="certs">
+          <article class="cert">
+            <button class="cert__thumb" type="button" data-cert="assets/img/certs/udemy-sap-abap-hana.jpg"
+              data-cert-title="SAP ABAP on HANA · Udemy · Feb 2025" aria-label="View SAP ABAP on HANA certificate">
+              <img src="assets/img/certs/udemy-sap-abap-hana-thumb.jpg" alt="" width="560" height="417">
+            </button>
+            <div class="cert__body">
+              <h3>SAP ABAP on HANA</h3>
+              <p class="cert__meta">Udemy · Feb 2025</p>
+            </div>
+          </article>
+          <article class="cert">
+            <button class="cert__thumb" type="button" data-cert="assets/img/certs/codewithharry-python.jpg"
+              data-cert-title="Complete Python Bootcamp: Learn Python from Scratch · CodeWithHarry · Mar 2026"
+              aria-label="View Complete Python Bootcamp certificate">
+              <img src="assets/img/certs/codewithharry-python-thumb.jpg" alt="" width="560" height="393">
+            </button>
+            <div class="cert__body">
+              <h3>Complete Python Bootcamp: Learn Python from Scratch</h3>
+              <p class="cert__meta">CodeWithHarry · Mar 2026</p>
+            </div>
+          </article>
+          <article class="cert">
+            <button class="cert__thumb" type="button" data-cert="assets/img/certs/ibm-ml-python.jpg"
+              data-cert-title="Machine Learning with Python · IBM Cognitive Class · Mar 2022"
+              aria-label="View Machine Learning with Python certificate">
+              <img src="assets/img/certs/ibm-ml-python-thumb.jpg" alt="" width="560" height="400">
+            </button>
+            <div class="cert__body">
+              <h3>Machine Learning with Python</h3>
+              <p class="cert__meta">IBM Cognitive Class · Mar 2022</p>
+            </div>
+          </article>
+        </div>
+        <div class="more-certs">
+          <button class="more-cert" type="button" data-cert="assets/img/certs/hackerrank-python.jpg"
+            data-cert-title="Python (Basic) · HackerRank · Dec 2021">
+            <span>Python (Basic)</span><span class="cert__meta">HackerRank · Dec 2021</span><span
+              class="more-cert__view">View</span>
+          </button>
+          <button class="more-cert" type="button" data-cert="assets/img/certs/bitdegree-web-design.jpg"
+            data-cert-title="Learn Web Design: The Ultimate Guide for Beginners · BitDegree · May 2022">
+            <span>Learn Web Design</span><span class="cert__meta">BitDegree · May 2022</span><span
+              class="more-cert__view">View</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section" id="education" aria-labelledby="edu-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="edu-title"><span class="pr" aria-hidden="true">›</span>Education</h2>
+        </div>
+        <div class="edu">
+          <article class="edu__item">
+            <div class="edu__main">
+              <h3>B.Tech in Computer Science &amp; Engineering</h3>
+              <p>Guru Nanak Dev Engineering College, Ludhiana</p>
+              <p class="edu__when">July 2019 – June 2023</p>
+            </div>
+            <div class="edu__score"><b>8.21</b><small>CGPA</small></div>
+          </article>
+          <article class="edu__item">
+            <div class="edu__main">
+              <h3>Senior Secondary (Non-Medical)</h3>
+              <p>Jawahar Navodaya Vidyalaya</p>
+              <p class="edu__when">April 2018 – March 2019</p>
+            </div>
+            <div class="edu__score"><b>74.8%</b><small>Score</small></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section section--alt" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="contact-title"><span class="pr" aria-hidden="true">›</span>Contact</h2>
+        </div>
+        <div class="contact">
+          <div class="clist">
+            <div class="crow">
+              <span class="crow__ic"><svg aria-hidden="true">
+                  <use href="#i-mail" />
+                </svg></span>
+              <div><span class="crow__lbl">Email</span><a class="crow__val" id="c-email"
+                  href="mailto:simhr0001@gmail.com">simhr0001@gmail.com</a></div>
+              <button class="copybtn" type="button" data-copy="simhr0001@gmail.com" data-copy-target="c-email"
+                aria-label="Copy email address">Copy</button>
+            </div>
+            <div class="crow">
+              <span class="crow__ic"><svg aria-hidden="true">
+                  <use href="#i-phone" />
+                </svg></span>
+              <div><span class="crow__lbl">Phone</span><a class="crow__val" id="c-phone" href="tel:+919914050940">+91
+                  99140 50940</a></div>
+              <button class="copybtn" type="button" data-copy="+91 9914050940" data-copy-target="c-phone"
+                aria-label="Copy phone number">Copy</button>
+            </div>
+            <a class="crow crow--link" href="https://wa.me/919914050940" target="_blank" rel="noopener">
+              <span class="crow__ic"><svg aria-hidden="true">
+                  <use href="#i-chat" />
+                </svg></span>
+              <div><span class="crow__lbl">WhatsApp</span><span class="crow__val">+91 99140 50940</span></div>
+              <span class="crow__go" aria-hidden="true"><svg>
+                  <use href="#i-ext" />
+                </svg></span>
+            </a>
+            <a class="crow crow--link" href="https://www.linkedin.com/in/simhr/" target="_blank" rel="noopener">
+              <span class="crow__ic"><svg aria-hidden="true">
+                  <use href="#i-link" />
+                </svg></span>
+              <div><span class="crow__lbl">LinkedIn</span><span class="crow__val">linkedin.com/in/simhr</span></div>
+              <span class="crow__go" aria-hidden="true"><svg>
+                  <use href="#i-ext" />
+                </svg></span>
+            </a>
+            <a class="crow crow--link" href="https://github.com/simhr" target="_blank" rel="noopener">
+              <span class="crow__ic"><svg aria-hidden="true">
+                  <use href="#i-code" />
+                </svg></span>
+              <div><span class="crow__lbl">GitHub</span><span class="crow__val">github.com/simhr</span></div>
+              <span class="crow__go" aria-hidden="true"><svg>
+                  <use href="#i-ext" />
+                </svg></span>
+            </a>
+            <a class="crow crow--link" href="https://leetcode.com/u/simhr001/" target="_blank" rel="noopener">
+              <span class="crow__ic"><svg aria-hidden="true">
+                  <use href="#i-term" />
+                </svg></span>
+              <div><span class="crow__lbl">LeetCode</span><span class="crow__val">leetcode.com/u/simhr001</span></div>
+              <span class="crow__go" aria-hidden="true"><svg>
+                  <use href="#i-ext" />
+                </svg></span>
+            </a>
+            <div class="crow">
+              <span class="crow__ic"><svg aria-hidden="true">
+                  <use href="#i-pin" />
+                </svg></span>
+              <div><span class="crow__lbl">Location</span><span class="crow__val">Ludhiana, Punjab (141001)</span></div>
+            </div>
+          </div>
+
+          <div class="composer">
+            <div class="composer__bar">Send a message</div>
+            <form id="composer" novalidate>
+              <div class="field">
+                <label for="m-name">Your name</label>
+                <input id="m-name" name="name" type="text" autocomplete="name" maxlength="80" required
+                  aria-describedby="m-name-err">
+                <p class="field__err" id="m-name-err" hidden>Please enter your name.</p>
+              </div>
+              <div class="field">
+                <label for="m-msg">Message</label>
+                <textarea id="m-msg" name="message" maxlength="1000" required aria-describedby="m-msg-err"></textarea>
+                <p class="field__err" id="m-msg-err" hidden>Please write a message.</p>
+              </div>
+              <div class="composer__actions">
+                <a class="btn btn--primary" id="m-wa" href="https://wa.me/919914050940" target="_blank"
+                  rel="noopener"><svg aria-hidden="true">
+                    <use href="#i-chat" />
+                  </svg>WhatsApp</a>
+                <a class="btn" id="m-mail" href="mailto:simhr0001@gmail.com"><svg aria-hidden="true">
+                    <use href="#i-mail" />
+                  </svg>Email</a>
+                <a class="btn" id="m-gmail"
+                  href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=simhr0001%40gmail.com" target="_blank"
+                  rel="noopener">Gmail</a>
+              </div>
+              <p class="composer__note">Your message opens ready to send in WhatsApp, your email app or Gmail.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__inner">
+      <span>© <span id="year">2026</span> Simranjeet Singh</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Certificate">
+    <figure>
+      <div class="lightbox__img"><img id="lightbox-img" src="" alt=""></div>
+      <figcaption><span id="lightbox-cap"></span><button class="iconbtn" type="button" id="lightbox-close"
+          aria-label="Close"><svg class="icon">
+            <use href="#i-close" />
+          </svg></button></figcaption>
+    </figure>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"><span class="toast__ic" aria-hidden="true"><svg>
+        <use href="#i-check" />
+      </svg></span><span id="toast-msg"></span></div>
+
+  <script>
+    (() => {
+      'use strict';
+
+      const $ = (s, r = document) => r.querySelector(s);
+      const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+      const root = document.documentElement;
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+
+      const CONTACT = {
+        email: 'simhr0001@gmail.com',
+        whatsapp: '919914050940'
+      };
+
+      /* ---------- small facts that change with time ---------- */
+      $$('[data-years-since]').forEach((el) => {
+        const [y, m] = el.dataset.yearsSince.split('-').map(Number);
+        const now = new Date();
+        const months = (now.getFullYear() - y) * 12 + (now.getMonth() + 1 - m);
+        el.textContent = Math.max(1, Math.floor(months / 12)) + '+';
+      });
+      const yearEl = $('#year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      /* ---------- theme ---------- */
+      const THEME_KEY = 'simhr-theme';
+      const themeBtn = $('#theme-toggle');
+      const metaTheme = $('meta[name="theme-color"]');
+      const setTheme = (t, save) => {
+        root.dataset.theme = t === 'light' ? 'light' : 'dark';
+        if (metaTheme) metaTheme.setAttribute('content', t === 'light' ? '#f4f6f9' : '#090e18');
+        themeBtn.setAttribute('aria-label', t === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
+        if (save) {try {localStorage.setItem(THEME_KEY, t);} catch (e) { /* storage unavailable */} }
+      };
+      try {
+        const saved = localStorage.getItem(THEME_KEY);
+        if (saved === 'light' || saved === 'dark') setTheme(saved, false);
+      } catch (e) { /* ignore */}
+      themeBtn.addEventListener('click', () => setTheme(root.dataset.theme === 'light' ? 'dark' : 'light', true));
+
+      /* ---------- mobile menu ---------- */
+      const menuBtn = $('#menu-btn');
+      const mnav = $('#mnav');
+      const setMenu = (open) => {
+        mnav.hidden = !open;
+        menuBtn.setAttribute('aria-expanded', String(open));
+        menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      };
+      menuBtn.addEventListener('click', () => setMenu(mnav.hidden));
+      document.addEventListener('keydown', (e) => {if (e.key === 'Escape' && !mnav.hidden) {setMenu(false); menuBtn.focus();} });
+      document.addEventListener('click', (e) => {if (!mnav.hidden && !e.target.closest('.topbar')) setMenu(false);});
+      window.addEventListener('resize', () => {if (window.innerWidth >= 1180 && !mnav.hidden) setMenu(false);});
+
+      /* ---------- in-page links ---------- */
+      document.addEventListener('click', (e) => {
+        const a = e.target.closest('a[href^="#"]');
+        if (!a) return;
+        const id = a.getAttribute('href').slice(1);
+        const target = id && document.getElementById(id);
+        if (!target) return;
+        e.preventDefault();
+        setMenu(false);
+        target.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block: 'start'});
+        try {history.replaceState(null, '', id === 'top' ? location.pathname + location.search : '#' + id);} catch (err) { /* ignore */}
+      });
+
+      // underline the nav link for the section on screen
+      const navLinks = $$('.nav a');
+      if ('IntersectionObserver' in window && navLinks.length) {
+        const byId = new Map(navLinks.map((a) => [a.getAttribute('href').slice(1), a]));
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((en) => {
+            if (!en.isIntersecting) return;
+            navLinks.forEach((a) => a.classList.remove('is-active'));
+            const link = byId.get(en.target.id);
+            if (link) link.classList.add('is-active');
+          });
+        }, {rootMargin: '-45% 0px -50% 0px'});
+        $$('main section[id]').forEach((s) => io.observe(s));
+      }
+
+      /* ---------- hero typing line ---------- */
+      const SKILLS = ['ALV Reports', 'Adobe Forms & SmartForms', 'BAdIs & User Exits', 'Module Pool Programming', 'Object-Oriented ABAP', 'S/4HANA Migration'];
+      const typed = $('#typed');
+      if (typed) {
+        let i = 0;
+        if (reduce) {
+          setInterval(() => {i = (i + 1) % SKILLS.length; typed.textContent = SKILLS[i];}, 3000);
+        } else {
+          (async () => {
+            for (; ;) {
+              await wait(2400);
+              const cur = typed.textContent;
+              for (let n = cur.length; n >= 0; n--) {typed.textContent = cur.slice(0, n); await wait(24);}
+              i = (i + 1) % SKILLS.length;
+              await wait(160);
+              for (let n = 1; n <= SKILLS[i].length; n++) {typed.textContent = SKILLS[i].slice(0, n); await wait(50);}
+            }
+          })();
+        }
+      }
+
+      /* ---------- certificate viewer ---------- */
+      const lb = $('#lightbox');
+      const lbImg = $('#lightbox-img');
+      const lbCap = $('#lightbox-cap');
+      $$('[data-cert]').forEach((btn) => btn.addEventListener('click', () => {
+        lbImg.src = btn.dataset.cert;
+        lbImg.alt = btn.dataset.certTitle + ' certificate';
+        lbCap.textContent = btn.dataset.certTitle;
+        try {lb.showModal();} catch (e) {lb.setAttribute('open', '');}
+      }));
+      $('#lightbox-close').addEventListener('click', () => lb.close());
+      lb.addEventListener('click', (e) => {if (e.target === lb) lb.close();});
+
+      /* ---------- toast ---------- */
+      let toastTimer;
+      const toast = (msg) => {
+        const t = $('#toast');
+        $('#toast-msg').textContent = msg;
+        t.classList.add('is-on');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => t.classList.remove('is-on'), 2600);
+      };
+
+      /* ---------- copy buttons ---------- */
+      const selectText = (el) => {
+        try {
+          const range = document.createRange();
+          range.selectNodeContents(el);
+          const sel = window.getSelection();
+          sel.removeAllRanges();
+          sel.addRange(range);
+        } catch (e) { /* ignore */}
+      };
+      $$('[data-copy]').forEach((btn) => btn.addEventListener('click', () => {
+        const text = btn.dataset.copy;
+        const done = () => {
+          btn.textContent = 'Copied';
+          btn.classList.add('is-done');
+          toast('Copied ' + text);
+          setTimeout(() => {btn.textContent = 'Copy'; btn.classList.remove('is-done');}, 1800);
+        };
+        const fallback = () => {
+          const target = document.getElementById(btn.dataset.copyTarget);
+          if (target) selectText(target);
+          toast('Selected. Press Ctrl+C or long-press to copy.');
+        };
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fallback);
+          else fallback();
+        } catch (e) {fallback();}
+      }));
+
+      /* ---------- message form: WhatsApp / email / Gmail ---------- */
+      const nameIn = $('#m-name');
+      const msgIn = $('#m-msg');
+      const waBtn = $('#m-wa');
+      const mailBtn = $('#m-mail');
+      const gmailBtn = $('#m-gmail');
+
+      const compose = () => {
+        const name = nameIn.value.trim();
+        const msg = msgIn.value.trim();
+        const body = `Hi Simranjeet,\n\n${msg}\n\nRegards,\n${name}`;
+        const subject = `Message from ${name} via your portfolio`;
+        return {body, subject};
+      };
+      const updateLinks = () => {
+        const {body, subject} = compose();
+        waBtn.href = `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(body)}`;
+        mailBtn.href = `mailto:${CONTACT.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        gmailBtn.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(CONTACT.email)}` +
+          `&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      };
+      const showError = (input, show) => {
+        input.closest('.field').classList.toggle('is-invalid', show);
+        input.setAttribute('aria-invalid', String(show));
+        document.getElementById(input.getAttribute('aria-describedby')).hidden = !show;
+      };
+      const validate = () => {
+        const badName = !nameIn.value.trim();
+        const badMsg = !msgIn.value.trim();
+        showError(nameIn, badName);
+        showError(msgIn, badMsg);
+        if (badName) nameIn.focus();
+        else if (badMsg) msgIn.focus();
+        return !badName && !badMsg;
+      };
+      [nameIn, msgIn].forEach((el) => el.addEventListener('input', () => {
+        if (el.value.trim()) showError(el, false);
+        updateLinks();
+      }));
+      [waBtn, mailBtn, gmailBtn].forEach((btn) => btn.addEventListener('click', (e) => {
+        updateLinks();
+        if (!validate()) {e.preventDefault(); return;}
+        toast(btn === waBtn ? 'Opening WhatsApp…' : btn === gmailBtn ? 'Opening Gmail…' : 'Opening your email app…');
+      }));
+      // pressing Enter in the name field moves on to the message instead of sending
+      $('#composer').addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (!msgIn.value.trim()) msgIn.focus();
+      });
+      updateLinks();
+    })();
+
+  </script>
+</body>
+
+</html>
